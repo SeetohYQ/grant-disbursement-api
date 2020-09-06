@@ -25,10 +25,10 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 * **Data Params**
 
   `{
-        "type":"HDB",
-        "floor":15,
-        "unit":108,
-        "postal":633111
+        "type": "HDB",
+        "floor": 15,
+        "unit": 108,
+        "postal": 633111
     }`
 
 * **Success Response:**
@@ -68,14 +68,14 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 * **Data Params**
 
   `{
-    "id":"S8451234X",
-    "name":"Jane Tan",
-    "gender":"Female",
-    "maritalStatus":"Married",
-    "spouse":"S8251234X",
-    "occupationType":"Employed",
+    "id": "S8451234X",
+    "name": "Jane Tan",
+    "gender": "Female",
+    "maritalStatus": "Married",
+    "spouse": "S8251234X",
+    "occupationType": "Employed",
     "annualIncome": "50000",
-    "dob":"1984-06-23"
+    "dob": "1984-06-23"
 }`
 
 * **Success Response:**
@@ -108,7 +108,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 
     To search for households and recipients of grant disbursement endpoint
 
-   **Optional:**
+   **Optional:**<br/>
    `householdIncomeLimit=[integer]`<br/>
    `childrenAgeLimit=[integer]`<br/>
    `husbandWife=[boolean]`<br/>
@@ -172,7 +172,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
   
 *  **URL Params**
 
-   **Requied:**
+   **Required:**
  
    `id=[integer]`<br/>
 
@@ -241,7 +241,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
   
 *  **URL Params**
 
-   **Requied:**
+   **Required:**
  
    `id=[integer]`<br/>
 
@@ -272,7 +272,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
   
 *  **URL Params**
 
-   **Requied:**
+   **Required:**
  
    `id=[integer]`<br/>
    `personId=[integer]`<br/>
@@ -287,7 +287,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ message: 'Deleted family member successfully' }
+    **Content:** `{ message: 'Deleted family member successfully' }` 
 }`
 * **Error Response:**
   * **Code:** 500 Internal Server (catch-all for unexpected errors)  <br />
