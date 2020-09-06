@@ -225,7 +225,7 @@ app.post('/api/households/:id/members', (req, res) => {
     ADD_FAMILY_MEMBER([id, name, gender, maritalStatus, spouse, occupationType, annualIncome, dob, housingId])
         .then(_ => {
             res.status(201).json({
-                message: 'Added family member(s) to household successfully'
+                message: 'Added family member to household successfully'
             })
         })
         .catch(error => {

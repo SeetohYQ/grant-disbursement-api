@@ -6,6 +6,10 @@ To set up database locally, <b>run schema.sql</b>, which will create the tables 
 
 To run the API locally, ensure than npm is installed and <b>run npm install</b> to install the dependencies and then <b>run npm start</b> to start the server on http://localhost:3000.
 
+Assumptions:
+ * Each person can only belong to one household
+ * Many people can belong to one household
+
 **1. Create Household**
 ----
   Sends household's data in JSON format
@@ -34,9 +38,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 * **Success Response:**
 
   * **Code:** 201 Created <br />
-    **Content:** `{
-                message: 'Created household successfully'
-            }`
+    **Content:** `{ "message": "Created household successfully" }`
 * **Error Response:**
     * **Code:** 400 Bad Request <br />
     **Content:** `{"message": "Duplicate entry"}`
@@ -81,9 +83,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 * **Success Response:**
 
   * **Code:** 201 Created <br />
-    **Content:** `{
-                message: 'Added family member(s) to household successfully'
-            }`
+    **Content:** `{"message": "Added family member to household successfully" }`
 * **Error Response:**
     * **Code:** 400 Bad Request <br />
     **Content:** `{"message": "Duplicate entry"}`
@@ -92,7 +92,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 
   * **Code:** 500 Internal Server (catch-all for unexpected errors)  <br />
 
-**3. List households**
+**3. List Households**
 ----
   Returns json data containing list of households.
 
@@ -114,7 +114,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
    `husbandWife=[boolean]`<br/>
    `elderAgeLimit=[integer]`<br/>
 
-   For the  following schemes:
+   For the following schemes:
    * Student Encouragement Bonus, set householdIncomeLimit=150000 and childrenAgeLimit=16
 
    * Family Togetherness Scheme, set husbandWife=true and childrenAgeLimit=16
@@ -125,7 +125,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 
    * YOLO GST grant, set householdIncomeLimit=100000
 
-   Any other combinations of query params would result in 400 error
+   Any other combinations of query params would result in 400 error.
 * **Data Params**
 
   None
@@ -158,7 +158,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 
   * **Code:** 500 Internal Server (catch-all for unexpected errors)  <br />
 
-**4. Show household**
+**4. Show Household**
 ----
   Returns json data containing household's details and family members' details.
 
@@ -228,7 +228,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 * **Error Response:**
   * **Code:** 500 Internal Server (catch-all for unexpected errors)  <br />
 
-**5. Delete household and family members(s)**
+**5. Delete a Household and Family Members(s)**
 ----
 
 * **URL**
@@ -254,12 +254,12 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ message: 'Deleted household and family member(s) successfully' }
+    **Content:** `{"message": "Deleted household and family member(s) successfully"}`
 }`
 * **Error Response:**
   * **Code:** 500 Internal Server (catch-all for unexpected errors)  <br />
 
-**6. Delete family member from household**
+**6. Delete a Family Member from Household**
 ----
 
 * **URL**
@@ -277,8 +277,8 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
    `id=[integer]`<br/>
    `personId=[integer]`<br/>
 
-   id is unique identifier of the household, which is made up of floor number (0 for non-HDB), unit number and postal code.
-   personId is an unique identifer of the person, which could be NRIC for e.g.
+   id is unique identifier of the household, which is made up of floor number (0 for non-HDB), unit number and postal code.<br/>
+   personId is an unique identifer of the person (for e.g. NRIC).
 
 * **Data Params**
 
@@ -287,7 +287,7 @@ To run the API locally, ensure than npm is installed and <b>run npm install</b> 
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ message: 'Deleted family member successfully' }` 
+    **Content:** `{"message": "Deleted family member successfully"}`
 }`
 * **Error Response:**
   * **Code:** 500 Internal Server (catch-all for unexpected errors)  <br />
