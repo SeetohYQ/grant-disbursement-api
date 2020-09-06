@@ -1,0 +1,19 @@
+{
+  "name": "grant-disbursement-api",
+  "version": "1.0.0",
+  "description": " RESTful API that would help your team decide on groups of people who are eligible for various upcoming government grants.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SeetohYQ",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
